@@ -1,0 +1,176 @@
+\newpage
+\subsection*{Graphs of the Reciprocal Ratios}
+
+\begin{theorybox}{}
+The diagrams below show the graphs of $y= \text{cosec}\,{x}$, $y=\sec x$ and $ y = \cot x$ for $ 0 \leq x \leq 2\pi$.
+
+\begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            clip=false,
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=0, xmax=2*pi,
+            ymin=-3, ymax=3,
+            xtick={pi/2, 3*pi/2}, 
+            xticklabels={$\frac{\pi}{2}$, $\frac{3\pi}{2}$}, 
+            ytick={-1,1},
+            yticklabels={$-1$, $1$},
+            height=8cm,
+            width=12cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=750, domain = 0.34:2.80] { cosec(x) } node[ above right]{$y=\text{cosec}\,x$};
+       \addplot [samples=750, domain = 3.48:5.94] { cosec(x) };
+        \draw [dashed,] (pi,-3) -- (pi,0)  node[below left]{$\pi$} -- (pi,3) ;
+        \draw [dashed,] (2*pi,-3) -- (2*pi,0)  node[below left]{$2\pi$} -- (2*pi,3) ;
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+\begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            clip=false,
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=0, xmax=2*pi,
+            ymin=-3, ymax=3,
+            xtick={pi, 2*pi}, 
+            xticklabels={$\pi$, $2\pi$}, 
+            ytick={-1,1},
+            yticklabels={$-1$, $1$},
+            height=8cm,
+            width=12cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=500, domain = 0:1.23] { sec(x) } node[ above right]{$y=\text{sec}\,x$};
+        \addplot [samples=500, domain = 1.91:4.37] { sec(x) };
+        \addplot [samples=500, domain = 5.05:2*pi] { sec(x) };
+        \draw [dashed,] (pi/2,-3) -- (pi/2,0)  node[below left]{$\frac{\pi}{2}$} -- (pi/2,3) ;
+        \draw [dashed,] (3*pi/2,-3) -- (3*pi/2,0)  node[below left]{$\frac{3\pi}{2}$} -- (3*pi/2,3) ;
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    \begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=0, xmax=2*pi,
+            ymin=-4, ymax=4,
+            xtick={pi/2, 3*pi/2}, 
+            xticklabels={ $\frac{\pi}{2}$, $\frac{3\pi}{2}$}, 
+            ytick={0},
+            yticklabels={},
+            height=8cm,
+            width=12cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=250, domain = 0.24:2.897] { cot(x) };
+        \addplot [samples=250, domain = 3.386:6.038] { cot(x) } node[below left]{$y=\cot x$};
+
+
+        \draw [dashed] (pi,-4) -- (pi,0) node[below left]{$\frac{\pi}{2}$}-- (pi,4);
+        \draw [dashed] (2*pi,-4) -- (2*pi,0) node[below left]{$2\pi$} --(2*pi,4);
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+\clearpage
+
+We can summarise the behaviour of sine, cosine and tangent $\br{\dfrac{\text{sine}}{\text{cosine}}}$ ratios, in each quadrant below:
+
+\begin{center}
+    \begin{tikzpicture}[]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+        \coordinate[] (P) at (1.6069, 1.9151);
+        \coordinate[] (XR) at (2.5,0);
+        
+        \coordinate[label=above right:$1^{\text{st}}$ quadrant (A)] (A) at (1.7, 2);
+        \coordinate[label=above left:$2^{\text{nd}}$ quadrant (S)] (B) at (-1.7, 2);
+        \coordinate[label=below left:$3^{\text{rd}}$ quadrant (T)] (C) at (-1.7, -2);
+        \coordinate[label=below right:$4^{\text{th}}$ quadrant (C)] (D) at (1.7, -2);
+
+        \coordinate[label=below left:$180^{\circ}-\theta$ ] (B1) at (-2.5, 2);
+        \coordinate[label=above left:$180^{\circ}+\theta$] (C1) at (-2.5, -2);
+        \coordinate[label=above right:$360^{\circ}-\theta$] (D1) at (2.5, -2);
+        
+        \coordinate[label= above right: 
+            $\begin{cases}
+            \sin \theta >0 \\
+            \cos \theta >0 \\
+            \tan \theta >0 \\
+        \end{cases}$
+        ] (Q1) at (5,1.25);
+
+        \coordinate[label= below right: 
+            $\begin{cases}
+            \sin \alpha <0 \\
+            \textcolor{green!75!black}{\cos \alpha >0} \\
+            \tan \alpha <0 \\
+        \end{cases}$
+        ] (Q4) at (5,-1.25);
+
+\newenvironment{rcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\rbrace}
+
+        \coordinate[label=above left: 
+            $\begin{rcases}
+            \textcolor{green!75!black}{\sin \alpha >0} \\
+            \cos \alpha <0 \\
+            \tan \alpha <0 \\
+        \end{rcases}$
+        ] (Q2) at (-5,1.25);
+
+        \coordinate[label=below left: 
+            $\begin{rcases}
+            \sin \alpha <0 \\
+            \cos \alpha <0 \\
+            \textcolor{green!75!black}{\tan \alpha >0} \\
+        \end{rcases}$
+        ] (Q3) at (-5,-1.25);
+        
+        \draw [<-] (0,3) -- (0,-3);
+        \draw [->] (-3,0) -- (3,0);
+        \draw (0,0) circle (2.5cm);
+        \fill (1.6069, 1.9151) circle (2pt);
+        \draw (0,0) --  (P);
+        \tkzMarkAngle[size=1, ->](XR,O,P); 
+        \tkzLabelAngle[pos=0.7](XR,O,P){$\theta$};
+        
+    \end{tikzpicture}
+\end{center}
+
+You should also be familiar with the following exact values:
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.75}
+    \begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+    \hline
+    $\theta$ & $0^{\circ}$ & $30^{\circ}$ & $45^{\circ}$ & $60^{\circ}$ & $90^{\circ}$  \\ 
+    \hline
+    $\sin$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{1}{\sqrt{2}}$ & $\dfrac{\sqrt{3}}{2}$ & $1$  \\ 
+    \hline
+    $\cos$ & $1$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{\sqrt{2}}$ & $\dfrac{1}{2}$ & $0$  \\ 
+    \hline
+    $\tan$ & $0$ & $\dfrac{1}{\sqrt{3}}$ & $1$ & $\sqrt{3}$ & $\infty$  \\ 
+    \hline
+
+    \end{tabular}
+    \end{center}
+
+
+\end{theorybox}
+

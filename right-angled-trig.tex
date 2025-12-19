@@ -1,0 +1,231 @@
+\section{Primitive Functions}
+
+\subsection{The Anti-Derivative}
+
+\begin{theorybox}{Notes}
+    The sinusoidal functions refer to the sine and cosine functions, $y= \sin x$ and $y=\cos x$ whose graphs are shown below.
+
+    \begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=-2, xmax=7.7,
+            ymin=-1.25, ymax=1.25,
+            xtick={1.570796327, 3.141592654, 4.71238898, 6.283185307}, 
+            xticklabels={$\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$}, 
+            ytick={-1,1},
+            yticklabels={$-1$, $1$},
+            height=7cm,
+            width=14cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=1200, domain = 0:6.2831853] { sin(x) };
+        \addplot [ dashed, samples=400, domain = -1:0] { sin(x) };
+        \addplot [ dashed, samples=400, domain = 6.2831853:7] { sin(x) } node[above]{$y=\sin x$}; 
+        
+        \draw [blue, dashed, latex-latex] (-1,0) --  node[left, blue]{amplitude} (-1,1) ;
+        \draw [blue, dashed, latex-latex] (-1,-1) --  node[left, blue]{amplitude} (-1,0) ;
+
+        \draw [purple, dashed, latex-latex] (0, 1.15) -- node[above, purple]{period} (6.283185307, 1.15);
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    \begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=-2, xmax=7.7,
+            ymin=-1.25, ymax=1.25,
+            xtick={1.570796327, 3.141592654, 4.71238898, 6.283185307}, 
+            xticklabels={$\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$}, 
+            ytick={-1,1},
+            yticklabels={$-1$, $1$},
+            height=7cm,
+            width=14cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=1200, domain = 0:6.2831853] { cos(x) };
+        \addplot [ dashed, samples=400, domain = -1:0] { cos(x) };
+        \addplot [ dashed, samples=400, domain = 6.2831853:7] { cos(x) } node[below]{$y=\cos x$}; 
+
+        \draw [blue, dashed, latex-latex] (-1,0) --  node[left, blue]{amplitude} (-1,1) ;
+        \draw [blue, dashed, latex-latex] (-1,-1) --  node[left, blue]{amplitude} (-1,0) ;
+
+        \draw [purple, dashed, latex-latex] (0, 1.15) -- node[above, purple]{period} (6.283185307, 1.15);
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+    Transformations to the functions above can be expressed by writing them in the form
+    \begin{center}
+        $ y = a \sin \left( b \left(x-c \right) \right) + d $ and $ y = a \cos \left( b \left(x-c \right) \right) + d $
+    \end{center}
+    where:
+    \begin{itemize}
+        \item $a$ is the (magnitude of the) amplitude;
+        \item the period, $T$, is given by $T= \dfrac{2\pi}{b}$;
+        \vskip3mm
+        Hint: when drawing sinusoidal graphs, calculate the period, then mark it out using an interval that is divisible by $4$ on the horizontal axis.
+        \item $c$ is the phase (horizontal) shift; and
+        \item $d$ is the principal (central) axis (or equilibrium).
+        
+    \end{itemize}
+\end{theorybox}
+
+\begin{examplecz}{}
+    On separate number planes, sketch the graphs of:
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item $ y = 2 \sin (x)$
+        \item $ y = -3 \cos (x) + 3$
+        \item $ y = 3 \sin ( 2x ) $
+        \item $ y = 1 - \cos ( 3x ) $
+    \end{multicols}
+    \end{enumerate}
+\end{examplecz}
+
+\vspace*{5mm}
+
+\begin{examplecz}{}
+    On separate number planes, sketch the graphs of:
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item $ y =  \cos \br{2 \br{x- \dfrac{\pi}{4}} } + 1 $
+        \item $ y =  - \dfrac{3}{2} \sin \br{ \dfrac{x}{3} + \dfrac{\pi}{2} }$
+        \item $ y =  \cos \br{ \pi \br{x+3} } - 2 $
+        \item $ y =  3-5\sin \br{ \dfrac{\pi}{2} \br{x+3}} $
+    \end{multicols}
+    \end{enumerate}
+\end{examplecz}
+
+\vspace*{5mm}
+
+\begin{examplecz}{2022 HSC Mathematics Advanced Question 14}
+    The graph of $y = k \sin (ax)$ is shown. \hfill \textbf{2}
+    \begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=-25.13274123, xmax=25.13274123,
+            ymin=-4, ymax=4,
+            xtick={-25.13274123, -18.84955592, -12.56637061, -6.283185307, 6.283185307, 12.56637061, 18.84955592, 25.13274123}, 
+            xticklabels={$ - 8 \pi$, $-6\pi$, $-4\pi$, $-2\pi$, $2\pi$, $4\pi$, $6\pi$, $8\pi$}, 
+            ytick={-4, -2, 2, 4},
+            yticklabels={$-4$, $-2$, $2$, $4$},
+            height=6cm,
+            width=17.5cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=2000, domain = -25.13274123:25.13274123] { 4*sin((1/3)*x) };
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+    What are the values of $a$ and $k$?
+\end{examplecz}
+
+\vspace*{5mm}
+
+\begin{examplecz}{}
+    Let $ f \br{x} = 5.8 \sin \br{\dfrac{\pi}{6} \br{x+1}} +b $. The graph of $y=f\br{x}$ has a local maximum at $ \br{2,\,21.8}$ and a local minimum at $ \br{8,\,10.2}$.
+    \begin{enumerate}
+        \item Find the period of $f$.
+        \item Find the value of $b$.
+    \end{enumerate}
+\end{examplecz}
+
+\begin{examplecz}{}
+    Let $ f \br{x} = p \sin \br{\dfrac{2\pi}{9} \br{x-3.75}} +q $. The graph of $y=f\br{x}$ passes through the points $\br{3,\,2.5}$ and $6,\,15.1$.
+    \vskip3mm
+    Find the values of $p$ and $q$.
+\end{examplecz}
+
+\clearpage
+
+\subsection{Boundary Conditions}
+
+\begin{theorybox}{Notes}
+    The graph of $y= \tan x$ is shown below.
+
+    \begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=-3.1, xmax=6.3,
+            ymin=-4, ymax=4,
+            xtick={-3.141592654, -1.570796327, 0.7853981634, 1.570796327, 3.141592654, 4.71238898, 6.283185307}, 
+            xticklabels={$-\pi$,$-\frac{\pi}{2}$,$\frac{\pi}{4}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$}, 
+            ytick={1},
+            yticklabels={$1$},
+            height=10cm,
+            width=16cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=800, domain = -3.141592654:-1.81577] { tan(x) };
+        \addplot [samples=800, domain = -1.32582:1.32582] { tan(x) };
+        \addplot [samples=800, domain = 1.81577:4.46741] { tan(x) };
+        \addplot [samples=800, domain = 4.95737:6.283185307] { tan(x) };
+
+        \draw [dashed] (-1.570796327, -4) -- (-1.570796327, 4);
+        \draw [dashed] (1.570796327, -4) -- (1.570796327, 4);
+        \draw [dashed] (4.71238898, -4) -- (4.71238898, 4);
+
+        \fill (axis cs: 0.7853981634,1) circle (2pt);
+
+        \draw [purple, dashed, latex-latex] (-1.570796327, -4.15) -- node[below, purple]{period} (1.570796327, -4.15);
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    Transformations to the functions above can be expressed by writing them in the form
+    \begin{center}
+        $ y = a \tan \left( b \left(x-c \right) \right) + d $
+    \end{center}
+    where:
+    \begin{itemize}
+        \item the period, $T$, is given by $T= \dfrac{\pi}{b}$; and
+        \item $c$ is the phase (horizontal) shift.        
+    \end{itemize}
+\end{theorybox}
+
+\begin{examplecz}{}
+    On separate number planes, sketch the graphs of:
+    \begin{enumerate}
+    \begin{multicols}{3}
+        \item $ y =  \tan \br{2x} $
+        \item $ y =  - \tan \br{ \dfrac{x}{2} }$
+        \item $ y =  \tan \br{ 2 \br{x - \dfrac{\pi}{4}} } $
+    \end{multicols}
+    \end{enumerate}
+\end{examplecz}
+
+
+
+%\vfill
+
+%\begin{Qbox}{Homework}
+%    From CambridgeMATHS - Mathematics Extension 1
+%    \begin{itemize}
+%    \begin{multicols}{2}
+%        \item Exercise 6C: 1 to 3, 6, 8, 10, 11 and 13
+%    \end{multicols}
+%    \end{itemize}
+    
+%\end{Qbox}
+
+\clearpage

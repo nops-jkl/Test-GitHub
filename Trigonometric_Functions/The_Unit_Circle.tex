@@ -1,0 +1,410 @@
+\subsection{The unit circle}
+
+\begin{theorybox}{}
+
+Consider the a circle of radius $r$ centred at the origin.
+Points on the circle can be described using in two ways:
+    \begin{itemize}
+        \item Cartesian coordinates $\br{x,\,y}$, and
+        \item \textit{polar form} which uses:
+            \begin{itemize}
+                \item the distance between the point and the origin and,
+                \item the size of the angle between the line connecting the point to the origin and the positive $x$-axis.
+            \end{itemize}
+    \end{itemize}  
+\begin{center}
+    \begin{tikzpicture}[>={Triangle[length=2.75mm, width=1.5mm]}]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+        \coordinate[] (P) at (1.6069, 1.9151);
+        \coordinate[label= below right: $r$] (XR) at (2.5,0);
+        
+        \draw [<-] (0,3) -- (0,-3);
+        \draw [->] (-3,0) -- (3,0);
+        \draw (0,0) circle (2.5cm);
+        \fill (1.6069, 1.9151) circle (2pt);
+        \draw (0,0) -- node[above left]{$r$} (P) node[above right]{$P \left(x,\,y\right)$};
+        \tkzMarkAngle[size=1, -latex](XR,O,P); 
+        \tkzLabelAngle[pos=0.7](XR,O,P){$\theta$};
+        \draw [dashed, latex-latex] (1.6069,0) -- node[right]{$y$} (1.6069, 1.8);
+        \draw [dashed, latex-latex] (0,-0.1) -- node[below]{$x$} (1.6069, -0.1);
+    \end{tikzpicture}
+\end{center}
+
+By equating these two forms, we can see that:
+
+\begin{itemize}
+    \item the cosine ratio gives
+        \begin{align*}
+        \cos \theta &= \dfrac{x}{r} \\
+        \therefore y &= \cos \theta
+        \end{align*}
+
+    \item the sine ratio gives
+        \begin{align*}
+        \sin \theta &= \dfrac{y}{r} \\
+        \therefore y &= \sin \theta
+        \end{align*}
+\end{itemize}
+
+Since these are ratios, we can often let the radius of the circle be $1$~unit and say that:
+\begin{itemize}
+    \item $\cos \theta$ refers to the horizontal coordinate of the any point on the unit circle, and
+    \item $\sin \theta$ refers to the vertical coordinate of the any point on the unit circle.
+\end{itemize}
+
+  \newpage
+
+
+For interactive applets showing how the coordinates of the point as it moves around the circle, are related to the cosine and sine graphs, visit:
+\begin{itemize}
+    \item \url{https://www.geogebra.org/m/pcf9wwwa} and 
+    \item \url{https://www.geogebra.org/m/qugk8rk5} 
+\end{itemize}
+The diagrams below show the values of $\cos \theta$ ($x$-coordinate) and $\sin \theta$ ($y$-coordinate) of a point as it completes one revolution of a unit circle.
+\begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=-2, xmax=7.7,
+            ymin=-1, ymax=1,
+            xtick={1.570796327, 3.141592654, 4.71238898, 6.283185307}, 
+            xticklabels={$90^{\circ}$, $180^{\circ}$, $270^{\circ}$, $360^{\circ}$}, 
+            ytick={-1,1},
+            yticklabels={$-1$, $1$},
+            height=6cm,
+            width=12cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=1200, domain = 0:6.2831853] { sin(x) };
+        \addplot [ dashed, samples=400, domain = -1:0] { sin(x) };
+        \addplot [ dashed, samples=400, domain = 6.2831853:7] { sin(x) } node[above]{$y=\sin x$}; 
+        
+        %\draw [blue, dashed, latex-latex] (-1,0) --  node[left, blue]{amplitude} (-1,1) ;
+        %\draw [blue, dashed, latex-latex] (-1,-1) --  node[left, blue]{amplitude} (-1,0) ;
+
+        %\draw [purple, dashed, latex-latex] (0, 1.15) -- node[above, purple]{period} (6.283185307, 1.15);
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    \begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=-2, xmax=7.7,
+            ymin=-1, ymax=1,
+            xtick={1.570796327, 3.141592654, 4.71238898, 6.283185307}, 
+            xticklabels={$90^{\circ}$, $180^{\circ}$, $270^{\circ}$, $360^{\circ}$}, 
+            ytick={-1,1},
+            yticklabels={$-1$, $1$},
+            height=6cm,
+            width=12cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [samples=1200, domain = 0:6.2831853] { cos(x) };
+        \addplot [ dashed, samples=400, domain = -1:0] { cos(x) };
+        \addplot [ dashed, samples=400, domain = 6.2831853:7] { cos(x) } node[below]{$y=\cos x$}; 
+
+        %\draw [blue, dashed, latex-latex] (-1,0) --  node[left, blue]{amplitude} (-1,1) ;
+        %\draw [blue, dashed, latex-latex] (-1,-1) --  node[left, blue]{amplitude} (-1,0) ;
+
+        %\draw [purple, dashed, latex-latex] (0, 1.15) -- node[above, purple]{period} (6.283185307, 1.15);
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    The tangent ratio $\br{\tan}$ is defined as $ \dfrac{\text{sine}}{\text{cosine}}$ and is its graph is shown below.
+
+    \begin{center}
+    \begin{tikzpicture}[>=stealth]
+        \begin{axis}[
+            standard,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            xmin=-0.77, xmax=7.06,
+            ymin=-4, ymax=4,
+            xtick={1.570796327, 3.141592654, 4.71238898, 6.283185307}, 
+            xticklabels={$90^{\circ}$, $180^{\circ}$, $270^{\circ}$, $360^{\circ}$}, 
+            ytick={0},
+            yticklabels={},
+            height=8cm,
+            width=12cm
+            ]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+    
+        % Plot 1
+        \addplot [dashed, samples=50, domain = -0.79:0] { tan(x) };
+        \addplot [samples=125, domain = 0:1.32582] { tan(x) };
+        \addplot [samples=250, domain = 1.81577:4.46741] { tan(x) };
+        \addplot [samples=125, domain = 4.95737:2*pi] { tan(x) };
+        \addplot [dashed, samples=50, domain = 2*pi:7.06] { tan(x) } node[above]{$y=\tan x$};
+
+        \draw [dashed] (0.5*pi,-4.15) -- (0.5*pi,4.15);
+        \draw [dashed] (1.5*pi,-4.15) -- (1.5*pi,4.15);
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+\clearpage
+
+We can summarise the behaviour of sine, cosine and tangent $\br{\dfrac{\text{sine}}{\text{cosine}}}$ ratios, in each quadrant below:
+
+\begin{center}
+    \begin{tikzpicture}[]
+        \coordinate[label=below left:$O$] (O) at (0,0);
+        \coordinate[] (P) at (1.6069, 1.9151);
+        \coordinate[] (XR) at (2.5,0);
+        
+        \coordinate[label=above right:$1^{\text{st}}$ quadrant (A)] (A) at (1.7, 2);
+        \coordinate[label=above left:$2^{\text{nd}}$ quadrant (S)] (B) at (-1.7, 2);
+        \coordinate[label=below left:$3^{\text{rd}}$ quadrant (T)] (C) at (-1.7, -2);
+        \coordinate[label=below right:$4^{\text{th}}$ quadrant (C)] (D) at (1.7, -2);
+
+        \coordinate[label=below left:$180^{\circ}-\theta$ ] (B1) at (-2.5, 2);
+        \coordinate[label=above left:$180^{\circ}+\theta$] (C1) at (-2.5, -2);
+        \coordinate[label=above right:$360^{\circ}-\theta$] (D1) at (2.5, -2);
+        
+        \coordinate[label= above right: 
+            $\begin{cases}
+            \sin \theta >0 \\
+            \cos \theta >0 \\
+            \tan \theta >0 \\
+        \end{cases}$
+        ] (Q1) at (5,1.25);
+
+        \coordinate[label= below right: 
+            $\begin{cases}
+            \sin \alpha <0 \\
+            \textcolor{green!75!black}{\cos \alpha >0} \\
+            \tan \alpha <0 \\
+        \end{cases}$
+        ] (Q4) at (5,-1.25);
+
+\newenvironment{rcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\rbrace}
+
+        \coordinate[label=above left: 
+            $\begin{rcases}
+            \textcolor{green!75!black}{\sin \alpha >0} \\
+            \cos \alpha <0 \\
+            \tan \alpha <0 \\
+        \end{rcases}$
+        ] (Q2) at (-5,1.25);
+
+        \coordinate[label=below left: 
+            $\begin{rcases}
+            \sin \alpha <0 \\
+            \cos \alpha <0 \\
+            \textcolor{green!75!black}{\tan \alpha >0} \\
+        \end{rcases}$
+        ] (Q3) at (-5,-1.25);
+        
+        \draw [<-] (0,3) -- (0,-3);
+        \draw [->] (-3,0) -- (3,0);
+        \draw (0,0) circle (2.5cm);
+        \fill (1.6069, 1.9151) circle (2pt);
+        \draw (0,0) --  (P);
+        \tkzMarkAngle[size=1, ->](XR,O,P); 
+        \tkzLabelAngle[pos=0.7](XR,O,P){$\theta$};
+        
+    \end{tikzpicture}
+\end{center}
+
+You should also be familiar with the following exact values:
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.75}
+    \begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+    \hline
+    $\theta$ & $0^{\circ}$ & $30^{\circ}$ & $45^{\circ}$ & $60^{\circ}$ & $90^{\circ}$  \\ 
+    \hline
+    $\sin$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{1}{\sqrt{2}}$ & $\dfrac{\sqrt{3}}{2}$ & $1$  \\ 
+    \hline
+    $\cos$ & $1$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{\sqrt{2}}$ & $\dfrac{1}{2}$ & $0$  \\ 
+    \hline
+    $\tan$ & $0$ & $\dfrac{1}{\sqrt{3}}$ & $1$ & $\sqrt{3}$ & $\infty$  \\ 
+    \hline
+
+    \end{tabular}
+    \end{center}
+
+
+\end{theorybox}
+
+\newpage
+
+\begin{examplecz}{}
+Find the exact value of:
+\begin{enumerate}
+    \begin{multicols}{3}
+        \item $\sin 120^{\circ}$
+        \item $\cos 210^{\circ}$
+        \item $\tan 225^{\circ}$
+        \item $\cos 315^{\circ}$
+        \item $\tan 135^{\circ}$
+        \item $\sin 330^{\circ}$
+    \end{multicols}
+\end{enumerate}
+
+
+%\tcblower
+%\textbf{Solution:}
+%\vspace*{4.5cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+\vspace{5mm}
+
+\begin{examplecz}{}
+Find the exact value of:
+\begin{enumerate}
+    \begin{multicols}{3}
+        \item $\sin 90^{\circ}$
+        \item $\cos 180^{\circ}$
+        \item $\sin 270^{\circ}$
+        \item $\cos 360^{\circ}$
+        \item $\tan 180^{\circ}$
+        \item $\tan 270^{\circ}$
+    \end{multicols}
+\end{enumerate}
+
+
+\tcblower
+\textbf{Solution:}
+\vspace*{4.5cm}
+
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+\begin{comment}
+
+\begin{examplecz}{}
+Find the exact value of:
+\begin{enumerate}
+    \begin{multicols}{3}
+        \item $\sin 570^{\circ}$
+        \item $\cos 495^{\circ}$
+        \item $\sin 690^{\circ}$
+        \item $\cos 660^{\circ}$
+        \item $\tan 405^{\circ}$
+        \item $\sin \left(-270^{\circ} \right)$
+    \end{multicols}
+\end{enumerate}
+
+
+\tcblower
+\textbf{Solution:}
+\vspace*{2cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+\end{comment}
+
+\newpage
+
+\begin{examplecz}{}
+Given that $\sin A = \dfrac{3}{7}$ and $\cos A <0$, find the exact value of $\tan A$.
+
+\tcblower
+\textbf{Solution:}
+\vspace*{4.5cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+\vspace{5mm}
+
+
+\begin{examplecz}{}
+Given that $\cos \theta = -\dfrac{5}{8}$ and $\tan \theta >0$, find the exact value of $\sin \theta$.
+
+\tcblower
+\textbf{Solution:}
+\vspace*{4.5cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+\vspace{5mm}
+
+\begin{examplecz}{}
+Given that $\tan \theta = \dfrac{4}{9}$ and $\sin \theta <0$, find the exact value of $\cos \theta$.
+
+\tcblower
+\textbf{Solution:}
+\vspace*{4.5cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+\begin{examplecz}{}
+Give that $\sin \theta = 0.6$, find the value of:
+\begin{enumerate}
+    \begin{multicols}{3}
+        \item $\sin \left( \theta - 180^{\circ} \right)$
+        \item $\sin \left(\theta + 180^{\circ} \right)$
+        \item $\sin \left( 360^{\circ} + \theta \right)$
+        \item $\sin \left( 90^{\circ} + \theta \right)$
+        \item $\sin \left( \theta - 90^{\circ} \right)$
+        \item $\sin \left( 270^{\circ} - \theta \right)$
+    \end{multicols}
+\end{enumerate}
+
+
+\tcblower
+\textbf{Solution:}
+\vspace*{4.5cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+\vfill
+
+\begin{Qbox}{}
+    From \textit{CambridgeMaths Year 11 Mathematics Extension 1}:
+    \begin{itemize}
+        \item Exercise 6E: 1, 3, 4, 5, 6, 11
+        \item Exercise 6F: 3, 7
+    \end{itemize}
+\end{Qbox}
+

@@ -1,0 +1,193 @@
+%% PreAmble
+
+\documentclass[a4paper,12pt,addpoints]{exam}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[left=15mm, right=15mm, top=20mm, bottom=20mm, marginparsep=10mm]{geometry}
+
+\usepackage{amsmath}    % for maths stuff
+\usepackage{amssymb}    % for maths stuff
+\usepackage{mathabx}    % NESA - HSC Style - Integrals
+\usepackage{graphicx}   % for inserting images
+\usepackage{tikz}       % for diagrams
+\usepackage{tkz-euclide}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns,arrows.meta}
+\usetikzlibrary{shadows}
+\usetikzlibrary{external}
+\usetikzlibrary {patterns,patterns.meta}
+\usepackage{accents}    % for tilde underneath
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{pst-all}
+\usepackage{multicol,multirow}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{fillbetween}
+\usepackage{diagbox}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{esvect} % For arrows above vectors, use \vv{}
+\usepackage[thinlines]{easytable}
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+%% File Details
+
+\title{Trigonometry and Measure of Angles \\ MA-T1}
+
+\author{J. Truong}
+
+%Header and Footer
+
+    \firstpageheader{}{}{}
+    \firstpageheadrule
+
+    \runningheader{}{}{}
+    \runningheadrule
+    
+    \firstpagefooter{}{}{}
+    \firstpagefootrule
+
+    \runningfooter{J. Truong}{}{Page \thepage}
+    \runningfootrule
+
+
+% Question Formatting
+%spacing between questions
+\renewcommand{\questionshook}{%
+    \setlength{\topsep}{5mm}
+    \setlength{\itemsep}{5mm}}
+
+% Spacing between parts
+\renewcommand{\partshook}{
+    \setlength{\topsep}{5mm}
+    \setlength{\itemsep}{5mm}}
+
+% Spacing between subparts
+\renewcommand{\subpartshook}{
+    \setlength{\topsep}{5mm}
+    \setlength{\itemsep}{5mm}}
+    \renewcommand{\subpartlabel}{(\thesubpart )}
+
+% Marks Formatting
+\marksnotpoints
+\pointsinrightmargin
+\pointformat{\textbf{\themarginpoints}}
+
+
+
+
+
+% Writing Space Formatting
+\setlength\dottedlinefillheight{8mm}
+
+%%The command \dotlines{X} will produce X dotted lines. 
+\newlength\lenlines
+\newlength\llines
+\newcommand{\dotlines}[1]{
+\setlength{\llines}{#1mm}
+\setlength{\lenlines}{8\llines+1 mm}
+\fillwithdottedlines{\lenlines}
+}
+
+% Solution Space Formatting
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+
+
+%Brackets
+%spacing between questions
+
+%%Shortcuts
+\newcommand{\q}{\question}
+\newcommand{\p}{\part}
+\newcommand{\dpp}{\droppoints}
+\newcommand{\dl}{\fillwithdottedlines}
+\newcommand{\br}[1]{\left( #1 \right)}
+\newcommand{\drv}[3]{ \dfrac{d{#1}}{d{#2}} \left( #3 \right) }
+\newcommand{\ddx}[2]{ \dfrac{d}{d{#1}} \left( #2 \right) }
+
+
+%% BOXES %%
+
+%% THEORY
+\newtcolorbox{theorybox}[1]{breakable, colback=red!1!white,
+colframe=red!75!white,fonttitle=\bfseries,
+title={#1},arc=0mm}
+
+%% Proof
+\newtcolorbox{pfbox}[1]{colback=gray!1!white,
+colframe=gray!75!white,fonttitle=\bfseries,
+title=Proof,arc=0mm}
+
+%% Worked Example
+\newtcolorbox[auto counter]{wexample}[2][]{%
+colback=orange!1!white,colframe=orange!75!white,fonttitle=\bfseries,
+title=Worked example \thetcbcounter: #2,#1,arc=0mm}
+
+%% Example Cloze
+\newtcolorbox[auto counter, number within=subsection]{examplecz}[2][]{%
+colback=green!1!white,colframe=green!80!black,fonttitle=\bfseries,
+title= Example~\thetcbcounter: #2,#1,arc=0mm}
+
+%% Questions
+\newtcolorbox[auto counter]{Qbox}[2][]{%
+colback=blue!1!white,colframe=blue!70!white,fonttitle=\bfseries,
+title= Exercise, breakable,arc=0mm}
+
+%% Answers
+\newtcolorbox[auto counter]{Abox}[2][]{%
+colback=purple!1!white,colframe=purple!70!white,fonttitle=\bfseries,
+title= Answers,arc=0mm}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\renewcommand{\csc}{\,\text{cosec}\,}
+\newcommand{\dint}[0]{\displaystyle \int }
+
+\pgfplotsset{
+    standard/.style={
+    %axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    enlarge x limits=0.15,
+    enlarge y limits=0.15,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north},
+    every axis y label/.style={at={(current axis.above origin)},anchor=east},
+    axis line style={-{Triangle[length=2.75mm, width=1.5mm]}},
+    >={Triangle[length=2.75mm, width=1.5mm]}
+    }
+}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+
+\raggedright
+
+\begin{document}
+
+    \maketitle
+
+    \tableofcontents
+    \clearpage
+
+    %\input{right-angled-trig}
+    \input{Trigonometry with non-right-angled triangles/non-right-angled-trig}
+    \input{Trigonometric_Functions/Trigonometric_functions}
+    \input{Trigonometric_Identities/Unit_Trigonometric_Identities}
+
+    \input{topic_test}
+
+    
+\end{document}

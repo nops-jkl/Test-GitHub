@@ -1,0 +1,126 @@
+\newpage
+\subsection{The area of a triangle}
+
+\begin{theorybox}{Notes}
+
+The area, $A$, of any triangle can be calculated using the formula $$A=\dfrac{1}{2}ab\sin C$$
+\end{theorybox}
+
+\begin{pfbox}{Proof}
+
+The diagram below shows triangle $ABC$ where $AC=b$, $BC=a$ and point $M$ lies on $AB$ such that $AM \perp BC$.
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) node[below left]{$C$} -- (7,0)node[below right]{$B$} -- node[above right]{$c$} (4,3) node[above]{$A$} -- node[above left]{$b$}cycle;
+        \draw[dashed] (4,3) -- (4,0) node[below]{$M$};
+        \draw[dashed, stealth-stealth] (0,-0.75) -- node[below]{$a$} (7,-0.75);
+        \draw (3.75,0) -- (3.75,0.25) -- (4,0.25);
+    \end{tikzpicture}
+\end{center}
+
+From $\triangle ACM$, $\sin C = \dfrac{AM}{b} \Rightarrow AM = b \sin C$.
+\vskip5mm
+Now, using the fact that the area, $A$ of the triangle is
+$$\dfrac{1}{2} \times \text{base length} \times \text{perpendicular height}$$
+We get
+\begin{align*}
+    A &= \dfrac{1}{2} \times a \times b \sin C \\
+    \therefore A &= \dfrac{1}{2} a b \sin C
+\end{align*}
+This process can be repeated involving vertices $A$ and $B$ to give other variations of the formula.
+\end{pfbox}
+
+\vfill
+
+\begin{Qbox}{}
+    From \textit{CambridgeMaths Year 11 Mathematics Extension 1}:
+    \begin{itemize}
+        \item Exercise 6I: 4, 6, 13, 14, 16
+    \end{itemize}
+\end{Qbox}
+
+
+\newpage
+
+
+\begin{examplecz}{}
+
+In triangle $ABC$ below, $AB=15$\,cm, $BC=9$\,cm and $\angle ABC=43^{\circ}$. 
+\begin{center}
+    \begin{tikzpicture}
+        \coordinate[label=left: $A$] (A) at (0,0);
+        \coordinate[label=right: $B$] (B) at (6,0);
+        \coordinate[label=above: $C$] (C) at (3.5, 2.5);
+        \draw (A) -- node[below]{$15$\,cm} (B) -- node[above right]{$9$\,cm} (C) --  cycle;
+        \tkzLabelAngle[pos=1.2](C,B,A){$43^{\circ}$};
+        %\tkzLabelAngle[pos=1.1](H,I,J){$52^{\circ}$};        
+    \end{tikzpicture}
+\end{center}
+Find the area of triangle $ABC$, correct to two decimal places.
+\tcblower
+\textbf{Solution:}
+\vspace*{4cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+\vspace{5mm}
+
+\begin{comment}
+\begin{examplecz}{}
+
+Triangle $ABC$ has sides $AC=21.4$\,cm, $BC=13.5$\,cm and $\angle ACB=76^{\circ}$ as shown. 
+\begin{center}
+    \begin{tikzpicture}[scale=0.85]
+        \coordinate[label=left: $A$] (A) at (0,-2);
+        \coordinate[label=right: $B$] (B) at (6,0);
+        \coordinate[label=above: $C$] (C) at (2.5, 3);
+        \draw (A) -- (B) -- node[above right]{$13.5$\,cm} (C) -- node[above left]{$21.4$\,cm}  cycle;
+        \tkzLabelAngle[pos=0.8](A,C,B){$76^{\circ}$};
+        %\tkzLabelAngle[pos=1.1](H,I,J){$52^{\circ}$};        
+    \end{tikzpicture}
+\end{center}
+Find the area of triangle $ABC$, correct to two decimal places.
+\tcblower
+\textbf{Solution:}
+\vspace*{4cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+\end{comment}
+
+\begin{examplecz}{}
+Triangle $PQR$ has an area of $155\,\text{cm}^2$. $PQ=20$\,cm, $QR=17.5$\,cm and $\angle PQR=\theta$ as shown. 
+\begin{center}
+    \begin{tikzpicture}[scale=0.75]
+        \coordinate[label=above left: $P$] (P) at (0,5);
+        \coordinate[label=below left: $Q$] (Q) at (0,0);
+        \coordinate[label=right: $R$] (R) at (4, 2.5);
+        \draw (P) -- node[left]{$20$\,cm} (Q) -- node[below right]{$17.5$\,cm}  (R) --  cycle;
+        \tkzLabelAngle[pos=0.8](R,Q,P){$\theta$};
+        %\tkzLabelAngle[pos=1.1](H,I,J){$52^{\circ}$};        
+    \end{tikzpicture}
+\end{center}
+Find the value of  $\theta$, correct to the nearest degree.
+\tcblower
+\textbf{Solution:}
+\vspace*{4cm}
+%\begin{align*}
+%    \dfrac{\sin \theta}{13} &= \dfrac{\sin 89 ^{\circ}}{25} \\
+%    \sin \theta &= \dfrac{13 \sin 89^{\circ}}{25} \\
+%    \therefore \theta &= \sin ^{-1} \left(\dfrac{13 \sin 89^{\circ}}{25}  \right) \\
+%    &= 31^{\circ}
+%\end{align*}
+\end{examplecz}
+
+
+
+

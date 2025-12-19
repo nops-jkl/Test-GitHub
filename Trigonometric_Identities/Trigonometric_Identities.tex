@@ -1,0 +1,114 @@
+\subsection{Pythagorean Identities}
+
+\begin{theorybox}{}
+The reciprocal ratios are:
+\begin{itemize}
+    \begin{multicols}{3}
+        \item $\text{cosec} \theta = \dfrac{1}{\sin \theta}$
+        \item $ \sec \theta = \dfrac{1}{\cos \theta} $
+        \item $ \cot \theta = \dfrac{\cos \theta}{\sin \theta} $
+    \end{multicols}
+\end{itemize}
+The first Pythagorean theorem states that
+\begin{align}
+    \sin ^2 \theta + \cos ^2 \theta =1
+\end{align}
+We can arrange this to state
+\begin{align*}
+    \sin ^2 \theta &= 1 - \cos ^2 \theta \qquad \text{or} \\
+    \cos ^2 \theta &= 1 - \sin ^2 \theta 
+\end{align*}
+
+Using $(1)$, we can also obtain two other trigonometric identities
+\begin{align}
+    1 + \cot ^2 \theta =\text{cosec}^2\theta
+\end{align}
+
+and
+\begin{align}
+    1  + \tan ^2 \theta =\sec^2\theta
+\end{align}
+
+
+\end{theorybox}
+
+\begin{pfbox}{}
+    Consider the circle $x^2 +y^2 =r^2$ in the diagram below.
+    \begin{center}{}
+        \begin{tikzpicture}[>=latex, scale=0.8]
+            % x-axis
+            \draw[->](-4,0) -- (4,0) node[below ]{$x$};
+            % y-axis
+            \draw[->](0,-4) -- (0,4) node[left]{$y$};
+            % Circle
+            \draw (0,0) circle (3cm);
+            \coordinate[label=below right:$r$] (A) at (3,0);
+            \coordinate[label=below left:$-r$] (B) at (-3,0);
+            \coordinate[label=above left:$r$] (C) at (0,3);
+            \coordinate[label=below left:$-r$] (D) at (0,-3);
+            \coordinate[label=below left:$O$] (O) at (0,0);
+            \draw[] (0,0) -- (1.928, 2.298) node[above right]{$ \left( r \cos \theta ,\, r \sin \theta \right)$};
+            \fill (1.928, 2.298) circle (2pt);        
+        \end{tikzpicture}
+    \end{center}
+
+    The coordinates of the point must satisfy the equation of the circle, hence
+    \begin{align*}
+        \left(r \cos \theta  \right)^2 + \left(r \sin \theta \right)^2 &= r^2 \\
+        r^2 \cos^2 \theta + r^2 \sin ^2 \theta &= r^2 \\
+        \therefore \cos ^2 \theta + \sin ^2 \theta &= 1
+    \end{align*}
+    To obtain (2), we divide (1) by $\sin^2 \theta$ and to obtain (3), we divide (1) by $\cos^2 \theta$.
+    
+\end{pfbox}
+
+\newpage
+
+\begin{examplecz}{}
+Prove that: 
+\vskip5mm
+    \begin{enumerate}
+    \setlength{\itemsep}{8mm}
+
+        %\item $\cot^2 \theta = \text{cosec}^2 \theta -1 $
+        \item $3 + 3 \tan^2 \alpha = \dfrac{3}{1- \sin^2 \alpha} $
+        \item $ \sec ^2 x - \tan ^2 x = \text{cosec}^2 x - \cot^2 x $
+
+        \item $ \cot A + 2 \sec A = \dfrac{1-\sin ^2 A +2 \sin A}{\sin A \cos A}  $
+        \item $ \dfrac{1 - \sin^2 A \cos ^2 A }{\cos ^2 A} = \tan ^2 A + \cos^2 A$
+        \item $\sec^2 A \left(1 - \sin ^2 A \right) = 1$
+        \item $ \dfrac{1}{1 + \sin ^2 \theta } + \dfrac{1}{1+ \text{cosec}^2\theta } = 1  $
+        \item $ \dfrac{\sin A - \cos A}{\text{cosec}A - \sin A} = \tan ^2 A - \tan A  $
+    \end{enumerate}
+\end{examplecz}
+
+\vskip10mm
+\begin{examplecz}{}
+Simplify:
+\vskip5mm
+    \begin{enumerate}
+    \setlength{\itemsep}{8mm}
+    \begin{multicols}{2}
+        \item $ \sec \theta \cot \theta $
+        \item $5 \cot^2 A +5 $
+        \item $ \cot x - \cot x \cos^2 x $
+        \item $ \sin^2 A \text{cosec}^2 A $
+    \end{multicols}
+    \end{enumerate}
+
+\end{examplecz}
+
+\begin{examplecz}{}
+Find the value(s) of $x$, for $0 \leq x \leq 2\pi$, such that:
+\vskip5mm
+    \begin{enumerate}
+    \setlength{\itemsep}{8mm}
+        \item $ \sin^2 x = \cos^2 x -1$
+        \item $ 7 \cos x -2 \sin^2 x = 2 $
+        \item $ \dfrac{3}{2} \cos^2 x + \sin x =1 $
+    \end{enumerate}
+
+\end{examplecz}
+
+
+
